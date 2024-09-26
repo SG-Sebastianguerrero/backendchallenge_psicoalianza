@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@-webkit-keyframes fadeIn {
+    0%,
+    25% {
+        opacity: 0;
+        z-index: 0;
+    }
+    75%,
+    100% {
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+@keyframes fadeOut {
+    0%,
+    25% {
+        opacity: 1;
+        z-index: 10;
+    }
+    75%,
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+.fadeOut {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+.fade-in {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.btn-primary {
+    @apply w-full max-w-36 mx-auto py-1 rounded-full text-white font-bold hover:cursor-pointer bg-mainblue-dark;
+}
+
+.btn-secondary {
+    @apply w-full max-w-36 mx-auto py-1 rounded-full text-mainblue-dark font-bold hover:cursor-pointer border border-mainblue-dark;
+}
+.gradient-blue-dark {
+    background: rgb(104, 104, 204);
+    background: linear-gradient(
+        90deg,
+        rgba(104, 104, 204, 1) 0%,
+        rgba(55, 55, 236, 1) 100%
+    );
+}
+
+.gradient-blue-light {
+    background-image: linear-gradient(to top, #0591f996, #83a9ff7a, #0091ff00);
+}
+
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
