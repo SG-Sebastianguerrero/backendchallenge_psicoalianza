@@ -17,15 +17,16 @@ Route::group(['middleware' => ['auth']], function () {
         })->name('dashboard');  
     
         Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
-        Route::get('/employees_all', [EmployeeController::class, 'employees_all'])->name('employees_all');
-        
         Route::get('/employee/{id}', [EmployeeController::class, 'show']);
         Route::post('/employee', [EmployeeController::class, 'store'])->name('employee');
         Route::put('/employee', [EmployeeController::class, 'update'])->name('employee');
         Route::delete('/employee/{id}', [EmployeeController::class, 'destroy']);
 
         Route::get('/job_positions', [JobPositionController::class, 'index'])->name('job_positions');
-        
+        Route::get('/job_position/{id}', [JobPositionController::class, 'show']);
+        Route::post('/job_position', [JobPositionController::class, 'store'])->name('job_position');
+        Route::put('/job_position', [JobPositionController::class, 'update'])->name('job_position');
+        Route::delete('/job_position/{id}', [JobPositionController::class, 'destroy']);
     });
 });
 

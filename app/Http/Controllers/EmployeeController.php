@@ -104,36 +104,6 @@ class EmployeeController extends Controller
         }
     }
 
- /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function employees_all()
-    {
-        try{
-            $employees = DB::table('employees')->select(
-                'employees.id',
-                'employees.name',
-                'employees.lastname',
-                'employees.identification',
-                'employees.billing_address',
-                'employees.phone',
-                'cities.city_name',
-                'cities.departament',
-            )->join('cities', 'employees.city_id','=','cities.id')
-            ->orderBy('employees.id','ASC')
-            ->get();
-    
-            return $employees;
-        } catch (\Exception $e) {
-            $log = new Logs();
-            $log->file = "EmployeeController/allemployees()";
-            $log->message = $e->getMessage() . " " . $e->getLine();
-            $log->save();
-        }
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -184,4 +154,34 @@ class EmployeeController extends Controller
             return response()->json('Error: '.$e->getMessage());
         }
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    // public function employees_all()
+    // {
+    //     try{
+    //         $employees = DB::table('employees')->select(
+    //             'employees.id',
+    //             'employees.name',
+    //             'employees.lastname',
+    //             'employees.identification',
+    //             'employees.billing_address',
+    //             'employees.phone',
+    //             'cities.city_name',
+    //             'cities.departament',
+    //         )->join('cities', 'employees.city_id','=','cities.id')
+    //         ->orderBy('employees.id','ASC')
+    //         ->get();
+    
+    //         return $employees;
+    //     } catch (\Exception $e) {
+    //         $log = new Logs();
+    //         $log->file = "EmployeeController/allemployees()";
+    //         $log->message = $e->getMessage() . " " . $e->getLine();
+    //         $log->save();
+    //     }
+    // }
 }
