@@ -27,3 +27,37 @@ function openModal() {
             .classList.remove("hidden");
     }, 500);
 }
+
+/**
+ * Insert on db
+ */
+document
+    .querySelector("#form_employee_create")
+    .addEventListener("submit", createEmployee);
+
+async function createEmployee(e) {
+    e.preventDefault();
+    let formData = Object.fromEntries(new FormData(e.target));
+    let res = await fetch("/employee", {
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "X-CSRF-TOKEN": document.querySelector(
+                '#form_employee_create [name="_token"]'
+            ).value,
+        },
+        method: "post",
+        credentials: "same-origin",
+        body: JSON.stringify(formData),
+    });
+
+    if (!res?.ok) {
+        alert("Ocurrió un error en la creación");
+    }
+
+    alert("Se creó satisfactoriamente");
+    closeModal();
+    // EMPLOYEE_DATATABLE.row
+    //     .add([Object.fromEntries(new FormData(e.target))])
+    //     .draw(false);
+}

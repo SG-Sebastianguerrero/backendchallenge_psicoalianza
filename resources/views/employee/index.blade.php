@@ -1,5 +1,9 @@
-@include('employee.modal_create') 
-@include('employee.modal_update') 
+@include('employee.modal_create', [
+    'cities' => $cities
+]) 
+@include('employee.modal_update', [
+    'cities' => $cities
+]) 
 @include('employee.modal_delete') 
 <x-app-layout>
     <div class="w-full h-screen p-5 gap-10 flex flex-col justify-start items-center">
@@ -23,3 +27,4 @@
 
     </div> 
 </x-app-layout>
+

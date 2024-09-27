@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobPosition;
 use Illuminate\Http\Request;
-use App\Model\Logs;
+use App\Models\Logs;
 
 class JobPositionController extends Controller
 {

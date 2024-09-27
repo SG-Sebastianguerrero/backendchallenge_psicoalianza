@@ -23,7 +23,7 @@ class PostEmployeesSeeder extends Seeder
                 'lastname' => $faker->lastName,
                 'identification' => $faker->numerify('##########'),
                 'billing_address' => $faker->word(),
-                'phone' => $faker->phoneNumber(),
+                'phone' => $faker->numerify('##########'),
                 'city_id' => $faker->numberBetween(1, 32),
             ]);
         }

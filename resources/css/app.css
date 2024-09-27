@@ -54,6 +54,9 @@
 .btn-secondary {
     @apply w-full max-w-36 py-1 rounded-full text-mainblue-dark font-bold hover:cursor-pointer border border-mainblue-dark;
 }
+.form-textInput {
+    @apply rounded-full px-5 border border-gray-500 placeholder-slate-500;
+}
 .gradient-blue-dark {
     background: rgb(104, 104, 204);
     background: linear-gradient(
