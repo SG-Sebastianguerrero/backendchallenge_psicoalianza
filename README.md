@@ -1,27 +1,27 @@
 ## Libraries
 
-Jquery
-Tailwindcss
-Laravel 8
-Datatable.net
-Laravel Breeze
-FontAwasome
+Jquery  
+Tailwindcss  
+Laravel 8  
+Datatable.net  
+Laravel Breeze  
+FontAwasome  
 GoogleFonts
 
 database: sqlite
 
 ## Steps
 
-npm i
-composer install
-php artisan migrate
-php artisan db:seed
+1. npm i
+2. composer install
 
-## Run
+3. create file in database/database.sqlite
 
-php artisan serve
+4. php artisan migrate
+5. php artisan db:seed
+6. php artisan serve
 
 ## Login info
 
-user: test@example.com
+user: test@example.com  
 password: test12345+
