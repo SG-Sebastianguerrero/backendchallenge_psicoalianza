@@ -8,10 +8,14 @@ Laravel Breeze
 FontAwasome
 GoogleFonts
 
+database: sqlite
+
 ## Steps
 
 npm i
 composer install
+php artisan migrate
+php artisan db:seed
 
 ## Run
 

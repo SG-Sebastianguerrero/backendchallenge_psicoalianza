@@ -48,11 +48,11 @@
 }
 
 .btn-primary {
-    @apply w-full max-w-36 mx-auto py-1 rounded-full text-white font-bold hover:cursor-pointer bg-mainblue-dark;
+    @apply w-full max-w-36 py-1 rounded-full text-white font-bold hover:cursor-pointer bg-mainblue-dark;
 }
 
 .btn-secondary {
-    @apply w-full max-w-36 mx-auto py-1 rounded-full text-mainblue-dark font-bold hover:cursor-pointer border border-mainblue-dark;
+    @apply w-full max-w-36 py-1 rounded-full text-mainblue-dark font-bold hover:cursor-pointer border border-mainblue-dark;
 }
 .gradient-blue-dark {
     background: rgb(104, 104, 204);
